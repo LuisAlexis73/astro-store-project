@@ -340,11 +340,11 @@ const { product, images } = data;
       e.stopPropagation();
     };
 
-    const highlight = (e: DragEvent) => {
+    const highlight = () => {
       dropZone.classList.add("border-blue-500", "bg-blue-50");
     };
 
-    const unHighlight = (e: DragEvent) => {
+    const unHighlight = () => {
       dropZone.classList.remove("border-blue-500", "bg-blue-50");
     };
 

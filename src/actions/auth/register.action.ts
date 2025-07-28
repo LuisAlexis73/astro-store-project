@@ -8,7 +8,7 @@ export const registerUser = defineAction({
     email: z.string().email(),
     password: z.string().min(6),
   }),
-  handler: async ({ name, email, password }, { cookies }) => {
+  handler: async () => {
     return { ok: true };
   },
 });

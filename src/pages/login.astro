@@ -103,7 +103,6 @@ import AuthLayout from "@/layouts/AuthLayout.astro";
 
     const formData = new FormData(form);
 
-    // const { error } = await actions.loginUser(formData);
     const response = await signIn("credentials", {
       email: formData.get("email") as string,
       password: formData.get("password") as string,
@@ -121,7 +120,6 @@ import AuthLayout from "@/layouts/AuthLayout.astro";
       return;
     }
 
-    // TODO:
     window.location.replace("/");
   });
 
@@ -129,18 +127,11 @@ import AuthLayout from "@/layouts/AuthLayout.astro";
     bntGoogle.setAttribute("disabled", "disabled");
 
     try {
-      //! Paso 1: obtener la credenciales del lado del cliente
-
-      // Paso 2: Vericar las credenciales en el backend
-
       if (true) {
         alert("error.message");
         bntGoogle.removeAttribute("disabled");
         return;
       }
-
-      bntGoogle.innerText = "Redireccionando...";
-      window.location.replace("/protected");
     } catch (error) {
       console.log(error);
       bntGoogle.removeAttribute("disabled");
