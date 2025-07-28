@@ -1,5 +1,5 @@
 ---
-import {CartCounter} from "@/components/cart/CartCounter.tsx"
+import { CartCounter } from "@/components/cart/CartCounter.tsx";
 
 const { isLoggedIn, isAdmin } = Astro.locals;
 ---
@@ -14,7 +14,6 @@ const { isLoggedIn, isAdmin } = Astro.locals;
   </h1>
   <div class="flex items-center">
     <ul class="flex items-center space-x-6">
-
       <CartCounter client:load transition:persist />
 
       <li class="font-semibold text-gray-700">
@@ -44,7 +43,7 @@ const { isLoggedIn, isAdmin } = Astro.locals;
 </nav>
 
 <script>
-  import { signOut } from "auth-astro/client";
+  const { signOut } = await import("auth-astro/client");
 
   const logoutElem = document.querySelector("#logout") as HTMLLIElement;
 
