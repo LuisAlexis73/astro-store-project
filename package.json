@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/db": "^0.14.3",
-    "@astrojs/netlify": "^5.5.4",
+    "@astrojs/netlify": "6.4.1",
     "@astrojs/react": "^4.2.7",
     "@astrojs/tailwind": "^5.1.2",
     "@auth/core": "^0.37.4",
