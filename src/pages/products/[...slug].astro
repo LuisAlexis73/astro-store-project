@@ -67,6 +67,7 @@ const image = images[0].image.startsWith("http")
   import { CartCookiesClient } from "@/utils/cart-cookies.ts";
   import { navigate } from "astro:transitions/client";
   import { itemsInCart } from "@/store/cart.store.ts";
+  import Swal from "sweetalert2";
 
   document.addEventListener("astro:page-load", () => {
     const sizeElements = document.querySelectorAll("li");
@@ -111,7 +112,12 @@ const image = images[0].image.startsWith("http")
       const size = document.querySelector(".selected-size")?.textContent;
 
       if (!size) {
-        return alert("Seleccione un talle");
+        // return alert("Seleccione un talle");
+        return Swal.fire({
+          icon: "warning",
+          title: "Elige un talle.",
+          text: "Por favor seleccione un talle antes de agregar el producto al carrito.",
+        });
       }
 
       addToCartButton.disabled = true;
