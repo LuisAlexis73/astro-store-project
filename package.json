@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build --remote",
-    "postbuild": "node scripts/postbuild.js",
     "preview": "astro preview",
     "astro": "astro"
   },
