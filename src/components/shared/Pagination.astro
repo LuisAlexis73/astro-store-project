@@ -6,7 +6,7 @@ interface Props {
 const { totalPages } = Astro.props;
 
 const url = Astro.url;
-const pageParam = Number(url.searchParams.get('page') ?? 1);
+const pageParam = Number(url.searchParams.get("page") ?? 1);
 
 const currentPage = Math.max(
   pageParam > totalPages ? totalPages : pageParam,
@@ -17,10 +17,7 @@ const path = url.pathname;
 ---
 
 <div class="flex justify-between my-32">
-  <a
-  href={`${path}?page=${Math.max(currentPage - 1, 1)}`}
-  class="button"
-  >
+  <a href={`${path}?page=${Math.max(currentPage - 1, 1)}`} class="button">
     Anteriores
   </a>
 
@@ -35,6 +32,8 @@ const path = url.pathname;
 </div>
 
 <style>
+  @reference "@/assets/styles/global.css";
+
   .button {
     @apply p-2 bg-blue-500 text-white rounded;
   }

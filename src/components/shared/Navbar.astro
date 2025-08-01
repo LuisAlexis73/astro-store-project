@@ -30,12 +30,15 @@ const { isLoggedIn, isAdmin } = Astro.locals;
       {
         !isLoggedIn ? (
           <li class="font-semibold text-gray-700">
-            <a href="/login">Ingresar</a>
+            <a href="/login">Log In</a>
           </li>
         ) : (
-          <li id="logout" class="font-semibold text-gray-700">
-            <button>Salir</button>
-          </li>
+          <button
+            id="logout"
+            class="font-semibold text-gray-700 cursor-pointer"
+          >
+            Log Out
+          </button>
         )
       }
     </ul>

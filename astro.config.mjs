@@ -1,18 +1,21 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
 import netlify from '@astrojs/netlify';
-import tailwind from '@astrojs/tailwind'
-
 import db from '@astrojs/db';
-
 import auth from 'auth-astro';
-
 import react from '@astrojs/react';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  integrations: [db(), auth(), react(), tailwind()],
+  integrations: [
+    db(),
+    auth(),
+    react(),
+  ],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
 });
