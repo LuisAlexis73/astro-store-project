@@ -15,3 +15,9 @@ pnpm install
 ```bash
 pnpm run dev
 ```
+
+## Astro DB
+ Para crear base de datos en Turso sigue las instrucciones en la documentacion de Astro.
+```
+https://docs.astro.build/en/guides/astro-db/#migrate-from-astro-studio-to-turso
+```
