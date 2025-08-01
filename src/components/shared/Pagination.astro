@@ -18,16 +18,16 @@ const path = url.pathname;
 
 <div class="flex justify-between my-32">
   <a href={`${path}?page=${Math.max(currentPage - 1, 1)}`} class="button">
-    Anteriores
+    Previus
   </a>
 
-  <span>Página {currentPage} de {totalPages}</span>
+  <span>Page {currentPage} of {totalPages}</span>
 
   <a
     href={`${path}?page=${Math.min(currentPage + 1, totalPages)}`}
     class="button"
   >
-    Siguientes
+    Next
   </a>
 </div>
 

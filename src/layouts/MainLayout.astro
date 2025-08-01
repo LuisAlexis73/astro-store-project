@@ -1,7 +1,6 @@
 ---
 import Navbar from "@/components/shared/Navbar.astro";
 import "@/assets/styles/global.css";
-import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title?: string;
@@ -42,7 +41,11 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <ViewTransitions />
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+    </style>
   </head>
   <body>
     <Navbar />

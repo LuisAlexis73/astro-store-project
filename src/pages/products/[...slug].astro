@@ -31,10 +31,10 @@ const image = images[0].image.startsWith("http")
     <ProductSlideshow images={images.map((i) => i.image)} />
 
     <section>
-      <h2 class="text-2xl font-bold">{product.title}</h2>
+      <h2 class="font-bold">{product.title}</h2>
       <h2 class="font-bold">${product.price}</h2>
 
-      <h3 class="mt-5">Tallas</h3>
+      <h3 class="mt-5">Sizes</h3>
       <ul class="flex gap-3">
         {
           product.sizes
@@ -43,7 +43,7 @@ const image = images[0].image.startsWith("http")
         }
       </ul>
 
-      <h3 class="mt-5">Cantidad</h3>
+      <h3 class="mt-5">Quantity</h3>
       <div>
         <button class="btn-quantity">-</button>
         <input type="number" min="1" value="1" />
@@ -51,11 +51,12 @@ const image = images[0].image.startsWith("http")
       </div>
 
       <button
-        class="mt-5 bg-blue-500 text-white p-3 w-full disabled:bg-gray-500"
-        >Añadir al carrito</button
+        class="mt-5 bg-blue-500 text-white p-3 w-full disabled:bg-gray-500 cursor-pointer"
       >
+        Add to Cart
+      </button>
 
-      <h3 class="mt-10">Descripción</h3>
+      <h3 class="mt-10">Description</h3>
       <p>{product.description}</p>
     </section>
   </div>
@@ -115,8 +116,8 @@ const image = images[0].image.startsWith("http")
         // return alert("Seleccione un talle");
         return Swal.fire({
           icon: "warning",
-          title: "Elige un talle.",
-          text: "Por favor seleccione un talle antes de agregar el producto al carrito.",
+          title: "Choose a size.",
+          text: "Please select a size before adding the product to the cart.",
         });
       }
 

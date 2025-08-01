@@ -1,30 +1,29 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import {actions} from "astro:actions";
-import Pagination from "@/components/shared/Pagination.astro"
-import {ProductList} from "@/components/products/ProductList.tsx"
+import { actions } from "astro:actions";
+import Pagination from "@/components/shared/Pagination.astro";
+import { ProductList } from "@/components/products/ProductList.tsx";
 
 const searchParams = Astro.url.searchParams;
-const pageParam = Number(searchParams.get('page') ?? 1);
+const pageParam = Number(searchParams.get("page") ?? 1);
 
-const {data, error} = await Astro.callAction(actions.getProductsByPage, {
+const { data, error } = await Astro.callAction(actions.getProductsByPage, {
   page: pageParam,
 });
 
-if(error){
-  return Astro.redirect('/');
+if (error) {
+  return Astro.redirect("/");
 }
 
-const {products, totalPages} = data;
+const { products, totalPages } = data;
 
-if(data.products.length === 0){
-  return Astro.redirect(`/?page=${totalPages}`)
+if (data.products.length === 0) {
+  return Astro.redirect(`/?page=${totalPages}`);
 }
-
 ---
 
 <MainLayout>
-  <h1 class="text-3xl">Listado de Productos</h1>
+  <h1 class="text-3xl">Product List</h1>
 
   <ProductList products={products} client:idle />
 
